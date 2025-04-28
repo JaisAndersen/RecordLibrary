@@ -1,10 +1,13 @@
-﻿namespace RecordLibrary
+﻿using System.Xml.Linq;
+
+namespace RecordLibrary.Models
 {
     public class Record
     {
         private string title;
         private string artist;
         private int duration;
+        private int publicationYear;
 
         public int Id { get; set; }
         public string Title
@@ -41,6 +44,21 @@
                     duration = value;
             }
         }
-        public int PublicationYear { get; set; }
+        public int PublicationYear 
+        { 
+            get => publicationYear; 
+            set 
+            {
+                if (value < 1900)
+                    throw new ArgumentOutOfRangeException("Publication year must be greater than 1900");
+                publicationYear = value;
+            }
+                
+        }
+
+        public override string ToString()
+        {
+            return $"Id: {Id}, Title: {Title}, Artist: {Artist}, Duration: {Duration}, PublicationYear: {PublicationYear} ";
+        }
     }
 }
