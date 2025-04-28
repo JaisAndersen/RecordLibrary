@@ -12,6 +12,38 @@ namespace RecordLibraryTests
     public class RecordTests
     {
         [TestMethod()]
+        public void RecordTitleTest()
+        {
+            Record record = new Record();
+            record.Title = "Test Title";
+            Assert.AreEqual("Test Title", record.Title);
+            Assert.ThrowsException<ArgumentNullException>(() => record.Title = null);
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => record.Title = "");
+
+        }
+
+        [TestMethod()]
+        public void RecordArtistTest()
+        {
+            Record record = new Record();
+            record.Artist = "Test Artist";
+            Assert.AreEqual("Test Artist", record.Artist);
+            Assert.ThrowsException<ArgumentNullException>(() => record.Artist = null);
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => record.Artist = "");
+        }
+
+        [TestMethod()]
+        public void RecordDurationTest()
+        {
+            Record record = new Record();
+            record.Duration = 300;
+            Assert.AreEqual(300, record.Duration);
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => record.Duration = -1);
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => record.Duration = 8000);
+        }
+
+
+        [TestMethod()]
         public void ToStringTest()
         {
             Record record = new Record
