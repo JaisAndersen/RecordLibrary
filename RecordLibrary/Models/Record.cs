@@ -54,10 +54,8 @@ namespace RecordLibrary.Models
                 if (value < 1900)
                     throw new ArgumentOutOfRangeException("Publication year must be greater than 1900");
                 publicationYear = value;
-            }
-                
+            }                
         }
-
         public override string ToString()
         {
             return $"Id: {Id}, Title: {Title}, Artist: {Artist}, Duration: {Duration}, PublicationYear: {PublicationYear}";

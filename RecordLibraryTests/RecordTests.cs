@@ -25,6 +25,5 @@ namespace RecordLibraryTests
             string result = record.ToString();
             Assert.AreEqual("Id: 1, Title: Test Title, Artist: Test Artist, Duration: 300, PublicationYear: 2023", result);
         }
-
     }
 }
