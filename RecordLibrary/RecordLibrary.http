@@ -1,0 +1,6 @@
+@RecordLibrary_HostAddress = http://localhost:5173
+
+GET {{RecordLibrary_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
