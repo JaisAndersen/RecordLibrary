@@ -19,6 +19,7 @@ namespace RecordLibrary.Models
                     throw new ArgumentNullException("Title is null");
                 if (value.Length < 1)
                     throw new ArgumentOutOfRangeException("Title must be at least 1 charachter long");
+                title = value;
             }
         }
         public string Artist
@@ -41,7 +42,8 @@ namespace RecordLibrary.Models
                 if (value < 0)
                     throw new ArgumentOutOfRangeException("Duration must be a positive number");
                 if (value > 7200)
-                    duration = value;
+                    throw new ArgumentOutOfRangeException("Duration must be less than 7200 seconds");
+                duration = value;
             }
         }
         public int PublicationYear 
@@ -58,7 +60,7 @@ namespace RecordLibrary.Models
 
         public override string ToString()
         {
-            return $"Id: {Id}, Title: {Title}, Artist: {Artist}, Duration: {Duration}, PublicationYear: {PublicationYear} ";
+            return $"Id: {Id}, Title: {Title}, Artist: {Artist}, Duration: {Duration}, PublicationYear: {PublicationYear}";
         }
     }
 }

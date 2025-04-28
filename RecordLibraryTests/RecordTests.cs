@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RecordLibrary.Models.Tests
+namespace RecordLibraryTests
 {
     [TestClass()]
     public class RecordTests
@@ -22,6 +22,8 @@ namespace RecordLibrary.Models.Tests
                 Duration = 300,
                 PublicationYear = 2023
             };
+            string result = record.ToString();
+            Assert.AreEqual("Id: 1, Title: Test Title, Artist: Test Artist, Duration: 300, PublicationYear: 2023", result);
         }
 
     }
