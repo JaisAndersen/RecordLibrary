@@ -57,10 +57,10 @@ namespace RecordLibrary.Models
                 publicationYear = value;
             }                
         }
-        public Record() : this(0, "Notitle", "Noartist", 0, 0) { }
-        public Record(int Id, string title, string artist, int duration, int publicationYear)
+        public Record() : this(0, "Notitle", "Noartist", 0, 1901) { }
+        public Record(int id, string title, string artist, int duration, int publicationYear)
         {
-            Id = id;
+            id = Id;
             Title = title;
             Artist = artist;
             Duration = duration;
