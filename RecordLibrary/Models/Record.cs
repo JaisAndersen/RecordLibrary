@@ -60,7 +60,7 @@ namespace RecordLibrary.Models
         public Record() : this(0, "Notitle", "Noartist", 0, 1901) { }
         public Record(int id, string title, string artist, int duration, int publicationYear)
         {
-            id = Id;
+            Id = id;
             Title = title;
             Artist = artist;
             Duration = duration;
