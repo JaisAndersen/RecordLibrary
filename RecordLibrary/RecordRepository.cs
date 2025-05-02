@@ -8,7 +8,7 @@ namespace RecordLibrary
 
         public List<Record> GetRecords()
         {
-            List<Record> result = new List<Record>(records);
+            var result = new List<Record>(records);
             return result;
         }
 
