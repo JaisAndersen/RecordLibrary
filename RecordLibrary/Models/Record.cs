@@ -9,6 +9,10 @@ namespace RecordLibrary.Models
         private int duration;
         private int publicationYear;
 
+        public Record(string v1, string v2, int v3, string v4)
+        {
+        }
+
         public int Id { get; set; }
         public string Title
         {
