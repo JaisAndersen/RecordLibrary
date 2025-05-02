@@ -42,6 +42,15 @@ namespace RecordLibraryTests
             Assert.ThrowsException<ArgumentOutOfRangeException>(() => record.Duration = 8000);
         }
 
+        [TestMethod()]
+        public void RecordPublicationYearTest()
+        {
+            Record record = new Record();
+            record.PublicationYear = 2023;
+            Assert.AreEqual(2023, record.PublicationYear);
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => record.PublicationYear = 1899);
+        }
+
 
         [TestMethod()]
         public void ToStringTest()
