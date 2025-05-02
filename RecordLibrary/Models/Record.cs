@@ -4,14 +4,11 @@ namespace RecordLibrary.Models
 {
     public class Record
     {
+        private int id;
         private string title;
         private string artist;
         private int duration;
         private int publicationYear;
-
-        public Record(string v1, string v2, int v3, string v4)
-        {
-        }
 
         public int Id { get; set; }
         public string Title
@@ -59,6 +56,15 @@ namespace RecordLibrary.Models
                     throw new ArgumentOutOfRangeException("Publication year must be greater than 1900");
                 publicationYear = value;
             }                
+        }
+        public Record() : this(0, "Notitle", "Noartist", 0, 0) { }
+        public Record(int Id, string title, string artist, int duration, int publicationYear)
+        {
+            Id = id;
+            Title = title;
+            Artist = artist;
+            Duration = duration;
+            PublicationYear = publicationYear;
         }
         public override string ToString()
         {
